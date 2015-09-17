@@ -1,0 +1,30 @@
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  padding-top: 70px;
+  padding-bottom: 40px;
+}
+footer {
+  padding: 30px 0;
+}
+.h1 {
+  font-size: 1.2em;
+}
+.btn {
+  text-transform: uppercase;
+}
+.main-menu {
+  margin-bottom: 50px;
+}
+.main-menu a {
+  font-weight: bold;
+  display: block;
+}
+.main-menu a:hover, .main-menu a:focus {
+  text-decoration: none;
+}
+.blank-btn {
+  font-size: 16px;
+}

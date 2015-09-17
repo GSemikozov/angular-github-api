@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h3 class="text-center">Repos search</h3>
+        <div class="list-group">
+            <div class="list-group-item text-center">
+                <form>
+                    <input ng-model="query" class="form-control" placeholder="Search" ng-keyup="$event.keyCode == 13 && executeSearch()">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="repo" ng-repeat="repo in repos">
+            <div class="list-group-item text-center">
+                <h4>
+                    <strong>{{ repo.full_name }}</strong>
+                </h4>
+                <p><b>Description:</b> {{ repo.description }}</p>
+                <a class="btn" ng-click="openRepo(repo.full_name)">Click to open repo details</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="list-group" id="repo" ng-show="activeRepo">
+            <div class="list-group-item text-center">
+                <h4>See in Github
+                    <a href="{{activeRepo.html_url}}" target="_blank" class="blank-btn pull-right">
+                        {{activeRepo.name}} <i class="glyphicon glyphicon-eye-open"></i>
+                    </a>
+                </h4>
+                <p><strong>{{ activeRepo.full_name }}</strong></p>
+                <p><em>Watched by {{ activeRepo.watchers_count }} people.</em> <em>Forks: {{activeRepo.forks}}</em></p>
+                <pre><span>Description</span>{{ activeRepo.description }}</pre>
+                <div>
+                    <p>Owner: {{activeRepo.owner.login}}</p>
+                    <img ng-src="{{activeRepo.owner.avatar_url}}" class="img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

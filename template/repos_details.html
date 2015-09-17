@@ -1,0 +1,18 @@
+<div class="row">
+    <div>{{activeRepo}}</div>
+    <div><a ng-click="openRepo(repo.full_name)">choose</a></div>
+    <div>{{repo.full_name}}</div>
+    <div id="repo">
+        <a href="{{activeRepo.html_url}}" target="_blank" ><i class="glyphicon glyphicon-eye-open"></i>
+            {{activeRepo.name}}
+        </a>
+        <strong>{{ activeRepo.full_name }}</strong> <em>Watched by {{ activeRepo.watchers_count }} people.</em>
+        <pre>{{ activeRepo.description }}</pre>
+        <div>{{activeRepo.watchers}}</div>
+        <div>{{activeRepo.forks}}</div>
+        <div>
+            <p>{{activeRepo.owner.login}}</p><p>{{}}</p>
+            <img ng-src="{{activeRepo.owner.avatar_url}}">
+        </div>
+    </div>
+</div>
